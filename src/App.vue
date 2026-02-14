@@ -20,7 +20,7 @@ const images = Array.from({ length: 8 }, (_, i) => `${base}${i + 1}.jpg`)
         size="large"
         round
         tag="a"
-        href="https://chatgpt.com/zh-TW/"
+        href="https://www.instagram.com/youarewhatyoueat.dreamer?igsh=NzRjZmx1dXp5NTA5"
         class="!text-lg !px-8 !py-5"
       >
         點我私訊IG小編了解更多 ▶

@@ -5,7 +5,8 @@
       "Bash(bun create:*)",
       "Bash(bun install:*)",
       "Bash(bun dev:*)",
-      "Bash(bun add:*)"
+      "Bash(bun add:*)",
+      "WebFetch(domain:ultracl2689.github.io)"
     ]
   }
 }
