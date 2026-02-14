@@ -11,7 +11,7 @@ function scrollTo(id) {
   <div class="flex flex-col">
     <template v-for="(src, index) in images" :key="index">
       <!-- 第2張圖：講師陣容，加上兩個導航按鈕 -->
-      <div v-if="index === 1" class="relative">
+      <div v-if="index === 1" id="faculty" class="relative">
         <img :src="src" alt="講師陣容" class="w-full block" />
         <!-- 程潔茵 - 框框右下角按鈕 -->
         <button
@@ -31,9 +31,25 @@ function scrollTo(id) {
         </button>
       </div>
       <!-- 第3張圖：程潔茵介紹 -->
-      <img v-else-if="index === 2" :id="'instructor-cheng'" :src="src" alt="程潔茵 講師介紹" class="w-full block" />
+      <div v-else-if="index === 2" id="instructor-cheng" class="relative">
+        <img :src="src" alt="程潔茵 講師介紹" class="w-full block" />
+        <button
+          class="absolute right-4 bottom-4 bg-white/80 text-gray-700 text-xs px-3 py-1.5 rounded-full shadow backdrop-blur-sm cursor-pointer"
+          @click="scrollTo('faculty')"
+        >
+          ◂ 回講師陣容
+        </button>
+      </div>
       <!-- 第4張圖：葉閔維介紹 -->
-      <img v-else-if="index === 3" :id="'instructor-yeh'" :src="src" alt="葉閔維 講師介紹" class="w-full block" />
+      <div v-else-if="index === 3" id="instructor-yeh" class="relative">
+        <img :src="src" alt="葉閔維 講師介紹" class="w-full block" />
+        <button
+          class="absolute right-4 bottom-4 bg-white/80 text-gray-700 text-xs px-3 py-1.5 rounded-full shadow backdrop-blur-sm cursor-pointer"
+          @click="scrollTo('faculty')"
+        >
+          ◂ 回講師陣容
+        </button>
+      </div>
       <!-- 其他圖片 -->
       <img v-else :src="src" :alt="`圖片 ${index + 1}`" class="w-full block" />
     </template>
