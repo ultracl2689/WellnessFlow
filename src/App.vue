@@ -1,5 +1,6 @@
 <script setup>
-const images = Array.from({ length: 8 }, (_, i) => `/${i + 1}.jpg`)
+const base = import.meta.env.BASE_URL
+const images = Array.from({ length: 8 }, (_, i) => `${base}${i + 1}.jpg`)
 </script>
 
 <template>
