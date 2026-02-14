@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create vite@latest . -- --template vue:*)",
+      "Bash(bun create:*)",
+      "Bash(bun install:*)",
+      "Bash(bun dev:*)",
+      "Bash(bun add:*)"
+    ]
+  }
+}
