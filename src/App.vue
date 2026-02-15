@@ -61,10 +61,10 @@ function scrollTo(id) {
         size="large"
         round
         tag="a"
-        href="https://www.instagram.com/youarewhatyoueat.dreamer?igsh=NzRjZmx1dXp5NTA5"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSeDzGj9mdnR_P8A7BJplJ8mSK6aIkLHxkqp4-_J7eZuwE0ACQ/viewform"
         class="!text-lg !px-8 !py-5"
       >
-        點我私訊IG小編了解更多 ▶
+        馬上報名 ▶
       </el-button>
     </div>
   </div>
