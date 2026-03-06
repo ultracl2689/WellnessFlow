@@ -3,11 +3,11 @@ import { ref } from 'vue'
 import ComingSoon from './components/ComingSoon.vue'
 
 const base = import.meta.env.BASE_URL
-const images = Array.from({ length: 8 }, (_, i) => `${base}${i + 1}.jpg`)
+const images = Array.from({ length: 6 }, (_, i) => `${base}${i + 1}.jpg`)
 
 // 開發者模式：設為 true 時顯示「暫無此頁面」佔位頁
 const isDev = import.meta.env.DEV
-const devMode = ref(true)
+const devMode = ref(false)
 
 function scrollTo(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
