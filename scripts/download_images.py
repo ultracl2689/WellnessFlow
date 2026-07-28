@@ -3,12 +3,18 @@ import re
 import os
 import sys
 
-FOLDER_ID = "1mH-m8PJ9obzBU5WiMb3iPoNUWB2tVuSr"
+# Support reading Google Drive Folder ID or URL from environment variables
+raw_folder_input = os.environ.get("GDRIVE_FOLDER_ID") or os.environ.get("GDRIVE_FOLDER_URL") or "1mH-m8PJ9obzBU5WiMb3iPoNUWB2tVuSr"
+
+# Extract Folder ID if full URL was provided
+url_match = re.search(r'folders/([a-zA-Z0-9_-]{25,50})', raw_folder_input)
+FOLDER_ID = url_match.group(1) if url_match else raw_folder_input
+
 PUBLIC_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "public")
 
 def sync_images():
     url = f"https://drive.google.com/drive/folders/{FOLDER_ID}"
-    print(f"Fetching folder metadata from {url}...")
+    print(f"Fetching folder metadata from {url} (Folder ID: {FOLDER_ID})...")
     
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)'})
     with urllib.request.urlopen(req) as resp:

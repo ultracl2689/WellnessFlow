@@ -30,6 +30,8 @@ jobs:
           python-version: '3.x'
 
       - name: Sync latest images from Google Drive
+        env:
+          GDRIVE_FOLDER_ID: ${{ vars.GDRIVE_FOLDER_ID || secrets.GDRIVE_FOLDER_ID }}
         run: python scripts/download_images.py
 
       - uses: oven-sh/setup-bun@v2
