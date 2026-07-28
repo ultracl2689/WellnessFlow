@@ -32,6 +32,7 @@ jobs:
       - name: Sync latest images from Google Drive
         env:
           GDRIVE_FOLDER_ID: ${{ vars.GDRIVE_FOLDER_ID || secrets.GDRIVE_FOLDER_ID }}
+          GDRIVE_API_KEY: ${{ secrets.GDRIVE_API_KEY }}
         run: python scripts/download_images.py
 
       - uses: oven-sh/setup-bun@v2
