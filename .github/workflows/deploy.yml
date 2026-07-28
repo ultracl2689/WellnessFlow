@@ -3,6 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: '0 0 * * *' # 每天 UTC 0:00 自動觸發同步與部署
+  workflow_dispatch: # 支援在 GitHub 網頁上點擊「Run workflow」按鈕立即更新圖片
 
 permissions:
   contents: read
@@ -22,6 +25,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Sync latest images from Google Drive
+        run: python scripts/download_images.py
+
       - uses: oven-sh/setup-bun@v2
 
       - run: bun install
@@ -36,3 +46,4 @@ jobs:
 
       - id: deployment
         uses: actions/deploy-pages@v4
+

@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "sync-images": "python3 scripts/download_images.py",
+    "build": "python3 scripts/download_images.py && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
